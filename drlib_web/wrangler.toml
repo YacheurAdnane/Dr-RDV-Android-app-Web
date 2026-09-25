@@ -1,0 +1,65 @@
+name = "drlib"
+main = "src/index.ts"
+compatibility_date = "2025-01-15"
+compatibility_flags = ["nodejs_compat"]
+
+# The PWA itself. Anything that matches a file in ./public is served straight
+# from Cloudflare's edge; everything else falls through to the Worker, which is
+# what /api/* relies on.
+[assets]
+directory = "./public"
+binding = "ASSETS"
+not_found_handling = "single-page-application"
+# Without this, "single-page-application" would let the asset router answer
+# /api/* with index.html before the Worker ever runs.
+run_worker_first = ["/api/*"]
+
+# Every five minutes, not every fifteen. The Worker does not check every alert
+# on every tick: each alert carries its own `next_check_at`, so the work is
+# spread across ticks instead of arriving as a burst. That keeps us under the
+# free plan's 50-subrequests-per-invocation ceiling and, more importantly,
+# stops all of Doctolib's traffic from this IP landing on the same second.
+[triggers]
+crons = ["*/5 * * * *"]
+
+# Every deployment would otherwise get its own public preview URL. A push
+# subscription is bound to the origin it was made on, so anyone who installed
+# the app from a preview link would silently stop getting notifications when
+# that link expired. One origin only.
+preview_urls = false
+
+[[d1_databases]]
+binding = "DB"
+database_name = "drlib"
+# Replace with the id printed by:  wrangler d1 create drlib
+database_id = "e5a486ac-dec5-4a5d-a158-7ec72ba69c7b"
+
+[vars]
+# Your deployed URL. The cron has no incoming request to read an origin from,
+# so this is what notifications link back to. Set it after the first deploy,
+# when Wrangler has printed the workers.dev hostname.
+APP_URL = "https://drlib.adnanerdvdr.workers.dev"
+# Used as the VAPID "sub" claim, so push services have someone to contact.
+CONTACT_EMAIL = "mailto:admin@example.com"
+# Sender address. With Brevo this must be an address you have validated in
+# Brevo > Senders; your own Gmail is fine and needs no domain. With Resend it
+# must be on a domain you have verified there.
+MAIL_FROM = "Alertes RDV <adnaneyach1@gmail.com>"
+# How many Doctolib requests the whole deployment may spend per 24 h.
+MAX_REQUESTS_PER_DAY = "800"
+# Subrequest budget for a single cron tick. The free plan hard-caps at 50.
+TICK_REQUEST_BUDGET = "42"
+# Pause a user's alerts after this many days without them opening the app. An
+# alert nobody reads still spends requests every quarter of an hour. Logging
+# back in lets them re-enable it. Set to "0" to never pause.
+AUTO_PAUSE_DAYS = "14"
+
+# Secrets — set these with `wrangler secret put <NAME>`, never in this file:
+#   VAPID_PUBLIC_KEY    from `npm run vapid`
+#   VAPID_PRIVATE_KEY   from `npm run vapid`
+#   BREVO_API_KEY       from brevo.com — recommended: it verifies a single
+#                       sender ADDRESS, so it works without owning a domain.
+#                       Free tier is 300 emails/day. Takes priority if both set.
+#   RESEND_API_KEY      from resend.com — only delivers to strangers once you
+#                       own and verify a DOMAIN there.
+#   ADMIN_BOOTSTRAP     one-time token used to create the first admin account

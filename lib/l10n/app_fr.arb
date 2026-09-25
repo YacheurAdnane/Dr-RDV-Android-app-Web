@@ -1,0 +1,1132 @@
+{
+  "@@locale": "fr",
+  "appTitle": "Alertes RDV",
+  "homeTitle": "Alertes rendez-vous",
+  "today": "Aujourd'hui",
+  "tomorrow": "Demain",
+  "todayShort": "auj.",
+  "tomorrowShort": "demain",
+  "never": "jamais",
+  "justNow": "à l'instant",
+  "minutesAgo": "il y a {n} min",
+  "@minutesAgo": {
+    "placeholders": {
+      "n": {
+        "type": "int"
+      }
+    }
+  },
+  "hoursAgo": "il y a {n} h",
+  "@hoursAgo": {
+    "placeholders": {
+      "n": {
+        "type": "int"
+      }
+    }
+  },
+  "daysAgo": "il y a {n} j",
+  "@daysAgo": {
+    "placeholders": {
+      "n": {
+        "type": "int"
+      }
+    }
+  },
+  "unitKm": "km",
+  "unitM": "m",
+  "minutesShort": "{n} min",
+  "@minutesShort": {
+    "placeholders": {
+      "n": {
+        "type": "int"
+      }
+    }
+  },
+  "hoursShort": "{n} h",
+  "@hoursShort": {
+    "placeholders": {
+      "n": {
+        "type": "int"
+      }
+    }
+  },
+  "secondsShort": "{n} s",
+  "@secondsShort": {
+    "placeholders": {
+      "n": {
+        "type": "int"
+      }
+    }
+  },
+  "daysShort": "{n} j",
+  "@daysShort": {
+    "placeholders": {
+      "n": {
+        "type": "int"
+      }
+    }
+  },
+  "h24": "24 h",
+  "crowFlies": "à vol d'oiseau",
+  "cancel": "Annuler",
+  "undo": "Annuler",
+  "delete": "Supprimer",
+  "edit": "Modifier",
+  "save": "Enregistrer",
+  "settings": "Réglages",
+  "androidSettings": "Paramètres",
+  "video": "Vidéo",
+  "doctorFallback": "Praticien",
+  "motiveFallback": "Motif",
+  "alertFallbackTitle": "Alerte",
+  "newBadge": "NOUVEAU",
+  "slotsCount": "{n, plural, =1{1 créneau} other{{n} créneaux}}",
+  "@slotsCount": {
+    "placeholders": {
+      "n": {
+        "type": "int"
+      }
+    }
+  },
+  "requestsCount": "{n, plural, =1{1 requête} other{{n} requêtes}}",
+  "@requestsCount": {
+    "placeholders": {
+      "n": {
+        "type": "int"
+      }
+    }
+  },
+  "cannotOpenDoctolib": "Impossible d'ouvrir Doctolib",
+  "restore": "Réactiver",
+  "more": "Plus",
+  "directions": "Itinéraire",
+  "ignoreSlot": "Ignorer ce créneau",
+  "ignoreDay": "Ignorer le {date}",
+  "@ignoreDay": {
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "ignoreDoctor": "Ignorer {name}",
+  "@ignoreDoctor": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "noMapsApp": "Aucune application de cartes trouvée",
+  "tripMinutes": "~{minutes} min {phrase}",
+  "@tripMinutes": {
+    "placeholders": {
+      "minutes": {
+        "type": "int"
+      },
+      "phrase": {
+        "type": "String"
+      }
+    }
+  },
+  "travelWalk": "À pied",
+  "travelBike": "Vélo",
+  "travelTransit": "Transports",
+  "travelCar": "Voiture",
+  "phraseWalk": "à pied",
+  "phraseBike": "à vélo",
+  "phraseTransit": "en transports",
+  "phraseCar": "en voiture",
+  "zoneAround": "{dist} autour de {label}",
+  "@zoneAround": {
+    "placeholders": {
+      "dist": {
+        "type": "String"
+      },
+      "label": {
+        "type": "String"
+      }
+    }
+  },
+  "zoneFromTravel": "{minutes} min {phrase} depuis {label}",
+  "@zoneFromTravel": {
+    "placeholders": {
+      "minutes": {
+        "type": "int"
+      },
+      "phrase": {
+        "type": "String"
+      },
+      "label": {
+        "type": "String"
+      }
+    }
+  },
+  "zoneShortTravel": "{minutes} min {phrase}",
+  "@zoneShortTravel": {
+    "placeholders": {
+      "minutes": {
+        "type": "int"
+      },
+      "phrase": {
+        "type": "String"
+      }
+    }
+  },
+  "styleDiscreet": "Discret",
+  "styleNormal": "Notification",
+  "styleCall": "M'appeler",
+  "styleDiscreetDesc": "Apparaît dans le volet, sans son. Pour les alertes de confort.",
+  "styleNormalDesc": "Notification classique avec le son habituel du téléphone.",
+  "styleCallDesc": "Sonne comme un appel WhatsApp, au volume de la sonnerie du téléphone, insiste jusqu'à ce que vous répondiez, et s'affiche sur l'écran verrouillé. Réservé aux rendez-vous que vous ne voulez surtout pas rater.",
+  "ringsLikeCall": "Sonne comme un appel",
+  "teleAny": "Peu importe",
+  "teleInPerson": "Au cabinet",
+  "teleOnline": "Téléconsultation",
+  "teleAnyDesc": "Sur place ou en vidéo, tout créneau compte.",
+  "teleInPersonDesc": "Uniquement des rendez-vous physiques, au cabinet du praticien.",
+  "teleOnlineDesc": "Uniquement des consultations vidéo, depuis chez vous.",
+  "teleShortInPerson": "cabinet",
+  "teleShortOnline": "vidéo",
+  "teleSegInPerson": "Cabinet",
+  "teleSegOnline": "Vidéo",
+  "soundSystemRingtone": "Sonnerie du téléphone",
+  "soundSystemAlarm": "Alarme du téléphone",
+  "soundClassic": "Téléphone classique",
+  "soundDigital": "Bips numériques",
+  "soundSoft": "Carillon doux",
+  "soundMarimba": "Marimba",
+  "soundUrgent": "Sirène urgente",
+  "windowRange": "du {from} au {to}",
+  "@windowRange": {
+    "placeholders": {
+      "from": {
+        "type": "String"
+      },
+      "to": {
+        "type": "String"
+      }
+    }
+  },
+  "window24h": "sous 24 h",
+  "windowDays": "sous {n} jours",
+  "@windowDays": {
+    "placeholders": {
+      "n": {
+        "type": "int"
+      }
+    }
+  },
+  "filterNewPatients": "nouveaux patients",
+  "budgetVeryCautious": "Très prudent",
+  "budgetCautious": "Prudent",
+  "budgetBalanced": "Équilibré",
+  "budgetReactive": "Réactif",
+  "budgetMax": "Maximum",
+  "intervalMinutes": "toutes les {n} minutes",
+  "@intervalMinutes": {
+    "placeholders": {
+      "n": {
+        "type": "int"
+      }
+    }
+  },
+  "intervalHour": "toutes les heures",
+  "intervalHours": "toutes les {n} heures",
+  "@intervalHours": {
+    "placeholders": {
+      "n": {
+        "type": "int"
+      }
+    }
+  },
+  "quietRange": "silence de {from} à {to}",
+  "@quietRange": {
+    "placeholders": {
+      "from": {
+        "type": "String"
+      },
+      "to": {
+        "type": "String"
+      }
+    }
+  },
+  "quietNone": "jour et nuit",
+  "guardPaused": "Pause de sécurité encore {m} min",
+  "@guardPaused": {
+    "placeholders": {
+      "m": {
+        "type": "int"
+      }
+    }
+  },
+  "guardQuota": "Quota quotidien atteint ({n} requêtes)",
+  "@guardQuota": {
+    "placeholders": {
+      "n": {
+        "type": "int"
+      }
+    }
+  },
+  "guardRateLimited": "Doctolib a limité le débit (429). Pause de {m} min.",
+  "@guardRateLimited": {
+    "placeholders": {
+      "m": {
+        "type": "int"
+      }
+    }
+  },
+  "guardRefused": "Doctolib a refusé la requête ({code}). Pause de {m} min.",
+  "@guardRefused": {
+    "placeholders": {
+      "code": {
+        "type": "int"
+      },
+      "m": {
+        "type": "int"
+      }
+    }
+  },
+  "apiNetwork": "Réseau indisponible ({error})",
+  "@apiNetwork": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "apiStatus": "Doctolib a répondu {code}{reason}",
+  "@apiStatus": {
+    "placeholders": {
+      "code": {
+        "type": "String"
+      },
+      "reason": {
+        "type": "String"
+      }
+    }
+  },
+  "apiCityNotFound": "Ville introuvable sur Doctolib : {city}",
+  "@apiCityNotFound": {
+    "placeholders": {
+      "city": {
+        "type": "String"
+      }
+    }
+  },
+  "apiBadProfile": "Fiche praticien illisible",
+  "geoUnavailable": "Service d'adresses indisponible ({code})",
+  "@geoUnavailable": {
+    "placeholders": {
+      "code": {
+        "type": "int"
+      }
+    }
+  },
+  "monitoringPaused": "Surveillance en pause",
+  "unexpectedError": "Erreur inattendue : {error}",
+  "@unexpectedError": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "failedStreak": "Échec {n} fois de suite, malgré la réparation automatique. Cause : {cause}",
+  "@failedStreak": {
+    "placeholders": {
+      "n": {
+        "type": "int"
+      },
+      "cause": {
+        "type": "String"
+      }
+    }
+  },
+  "repairing": "Réparation en cours ({n}/{max}) : {detail}",
+  "@repairing": {
+    "placeholders": {
+      "n": {
+        "type": "int"
+      },
+      "max": {
+        "type": "int"
+      },
+      "detail": {
+        "type": "String"
+      }
+    }
+  },
+  "stateDisabled": "désactivée",
+  "statePaused": "en pause",
+  "stateError": "erreur",
+  "stateNothing": "rien pour l'instant",
+  "incompleteSpeciality": "Alerte incomplète : spécialité ou ville manquante",
+  "incompleteDoctor": "Alerte incomplète : praticien manquant",
+  "noMotiveSelected": "Aucun motif de consultation sélectionné",
+  "motivesGone": "Les motifs suivis ne sont plus proposés",
+  "chSlots": "Créneaux disponibles",
+  "chSlotsDesc": "Un rendez-vous correspondant à une alerte est libre.",
+  "chQuiet": "Créneaux (discret)",
+  "chQuietDesc": "Créneaux signalés sans son.",
+  "chStatus": "État de la surveillance",
+  "chStatusDesc": "État des alertes, erreurs et pauses de sécurité.",
+  "chCall": "Appel : {label}",
+  "@chCall": {
+    "placeholders": {
+      "label": {
+        "type": "String"
+      }
+    }
+  },
+  "chCallDesc": "Sonne comme un appel quand un créneau prioritaire se libère.",
+  "slotAvailable": "{title} — créneau disponible",
+  "@slotAvailable": {
+    "placeholders": {
+      "title": {
+        "type": "String"
+      }
+    }
+  },
+  "slotsAvailableTitle": "{title} — {slots} disponibles",
+  "@slotsAvailableTitle": {
+    "placeholders": {
+      "title": {
+        "type": "String"
+      },
+      "slots": {
+        "type": "String"
+      }
+    }
+  },
+  "callTitle": "Rendez-vous disponible — {when}",
+  "@callTitle": {
+    "placeholders": {
+      "when": {
+        "type": "String"
+      }
+    }
+  },
+  "moreSlots": "{n, plural, =1{+ 1 autre créneau} other{+ {n} autres créneaux}}",
+  "@moreSlots": {
+    "placeholders": {
+      "n": {
+        "type": "int"
+      }
+    }
+  },
+  "decline": "Refuser",
+  "viewAppointment": "Voir le RDV",
+  "missedCall": "Appel manqué — {title}",
+  "@missedCall": {
+    "placeholders": {
+      "title": {
+        "type": "String"
+      }
+    }
+  },
+  "sampleTitle": "Exemple — {label}",
+  "@sampleTitle": {
+    "placeholders": {
+      "label": {
+        "type": "String"
+      }
+    }
+  },
+  "sampleDoctor": "Dr Exemple",
+  "sampleMotive": "Première consultation",
+  "sampleSpeciality": "Médecin généraliste",
+  "sampleTest": "Test",
+  "statusInterrupted": "Surveillance interrompue",
+  "statusNoAlerts": "Aucune alerte configurée",
+  "statusAllPaused": "Toutes les alertes sont en pause",
+  "statusSlots": "{n, plural, =1{1 créneau disponible} other{{n} créneaux disponibles}}",
+  "@statusSlots": {
+    "placeholders": {
+      "n": {
+        "type": "int"
+      }
+    }
+  },
+  "statusActive": "Surveillance active",
+  "statusActiveCount": "{active}/{total} alertes actives",
+  "@statusActiveCount": {
+    "placeholders": {
+      "active": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "statusChecked": "vérifié {ago}",
+  "@statusChecked": {
+    "placeholders": {
+      "ago": {
+        "type": "String"
+      }
+    }
+  },
+  "callAvailable": "Rendez-vous disponible",
+  "callWhen": "{day} à {time}",
+  "@callWhen": {
+    "placeholders": {
+      "day": {
+        "type": "String"
+      },
+      "time": {
+        "type": "String"
+      }
+    }
+  },
+  "callRingingLeft": "Sonne encore {s} s",
+  "@callRingingLeft": {
+    "placeholders": {
+      "s": {
+        "type": "int"
+      }
+    }
+  },
+  "checkNow": "Vérifier maintenant",
+  "newAlert": "Nouvelle alerte",
+  "noAlerts": "Aucune alerte",
+  "noAlertsBody": "Créez une alerte pour une spécialité dans une ville, ou pour un praticien précis. L'app surveille Doctolib et vous prévient dès qu'un créneau se libère dans la fenêtre que vous avez choisie.",
+  "createAlert": "Créer une alerte",
+  "pausedFor": "Surveillance en pause pour {m} min",
+  "@pausedFor": {
+    "placeholders": {
+      "m": {
+        "type": "int"
+      }
+    }
+  },
+  "footerSchedule": "Je cherche {interval}, {quiet}.",
+  "@footerSchedule": {
+    "placeholders": {
+      "interval": {
+        "type": "String"
+      },
+      "quiet": {
+        "type": "String"
+      }
+    }
+  },
+  "footerCost": "Environ {perRun} question(s) à Doctolib à chaque fois, ~{perDay} par jour sur une limite de {max}. Aujourd'hui : {today}.",
+  "@footerCost": {
+    "placeholders": {
+      "perRun": {
+        "type": "int"
+      },
+      "perDay": {
+        "type": "int"
+      },
+      "max": {
+        "type": "int"
+      },
+      "today": {
+        "type": "int"
+      }
+    }
+  },
+  "newCount": "{n, plural, =1{1 nouveau} other{{n} nouveaux}}",
+  "@newCount": {
+    "placeholders": {
+      "n": {
+        "type": "int"
+      }
+    }
+  },
+  "snoozedUntil": "en pause jusqu'à {time}",
+  "@snoozedUntil": {
+    "placeholders": {
+      "time": {
+        "type": "String"
+      }
+    }
+  },
+  "snoozedUntilCap": "En pause jusqu'à {time}",
+  "@snoozedUntilCap": {
+    "placeholders": {
+      "time": {
+        "type": "String"
+      }
+    }
+  },
+  "ignoredCount": "{n, plural, =1{1 ignoré} other{{n} ignorés}}",
+  "@ignoredCount": {
+    "placeholders": {
+      "n": {
+        "type": "int"
+      }
+    }
+  },
+  "earliestOf": "{slots} · le plus tôt {when}",
+  "@earliestOf": {
+    "placeholders": {
+      "slots": {
+        "type": "String"
+      },
+      "when": {
+        "type": "String"
+      }
+    }
+  },
+  "nothingInWindow": "Rien dans la fenêtre pour l'instant",
+  "checkedAgo": "Vérifié {ago}",
+  "@checkedAgo": {
+    "placeholders": {
+      "ago": {
+        "type": "String"
+      }
+    }
+  },
+  "msgNewSlots": "{n, plural, =1{1 nouveau créneau} other{{n} nouveaux créneaux}}",
+  "@msgNewSlots": {
+    "placeholders": {
+      "n": {
+        "type": "int"
+      }
+    }
+  },
+  "msgNothingNew": "{slots} (rien de nouveau)",
+  "@msgNothingNew": {
+    "placeholders": {
+      "slots": {
+        "type": "String"
+      }
+    }
+  },
+  "msgNoSlots": "Aucun créneau dans la fenêtre",
+  "later": "Plus tard",
+  "start": "Commencer",
+  "next": "Suivant",
+  "obWelcomeBody": "Vous dites ce que vous cherchez et pour quand. L'app surveille Doctolib en arrière-plan et vous prévient dès qu'un rendez-vous se libère dans cette fenêtre, pas pour un créneau dans trois mois.\n\nTrois réglages rapides et c'est prêt.",
+  "obLanguage": "Langue de l'application",
+  "allowNotifications": "Autoriser les notifications",
+  "obNotifBody": "C'est par là que l'app vous prévient. Sans cette autorisation, elle continue de chercher mais ne peut rien vous dire.",
+  "notifGranted": "Notifications autorisées",
+  "notifPending": "Pas encore autorisées",
+  "checkAgain": "Vérifier à nouveau",
+  "obBatteryTitle": "Laisser l'app tourner en arrière-plan",
+  "obBatteryBody": "Android met les applications en veille pour économiser la batterie. Si l'app est mise en veille, elle arrête de vérifier et vous ne recevrez plus rien.\n\nAutorisez-la à fonctionner sans restriction : c'est la raison numéro un pour laquelle ce type d'app « arrête de marcher ».",
+  "batteryGranted": "L'app peut tourner en arrière-plan",
+  "batteryPending": "Encore soumise aux restrictions de batterie",
+  "removeRestrictions": "Retirer les restrictions",
+  "openAppSettings": "Ouvrir les paramètres de l'app",
+  "obBatteryOem": "Sur Samsung, Xiaomi, Huawei, Oppo ou OnePlus, il faut souvent aussi ajouter l'app aux « applications protégées » ou la retirer de l'optimisation dans les réglages du fabricant.",
+  "quietHours": "Heures de silence",
+  "obQuietBody": "Pendant ces heures, l'app ne vérifie rien et ne sonne pas. Vous dormez tranquille, et cela réduit d'autant le nombre de requêtes envoyées à Doctolib.",
+  "enableQuietHours": "Activer les heures de silence",
+  "quietFromTo": "Silence de {from} à {to}",
+  "@quietFromTo": {
+    "placeholders": {
+      "from": {
+        "type": "String"
+      },
+      "to": {
+        "type": "String"
+      }
+    }
+  },
+  "canRingAnytime": "L'app peut sonner à toute heure",
+  "quietStart": "Début du silence : {h}",
+  "@quietStart": {
+    "placeholders": {
+      "h": {
+        "type": "String"
+      }
+    }
+  },
+  "quietEnd": "Réveil : {h}",
+  "@quietEnd": {
+    "placeholders": {
+      "h": {
+        "type": "String"
+      }
+    }
+  },
+  "changeLater": "Modifiable à tout moment dans les réglages.",
+  "errNeedSpeciality": "Choisissez au moins une spécialité",
+  "errNeedCity": "Choisissez une ville",
+  "errNeedDoctor": "Choisissez un praticien",
+  "errNeedMotive": "Choisissez au moins un motif",
+  "errNeedWeekday": "Gardez au moins un jour de la semaine",
+  "errEmptyHours": "La plage horaire est vide",
+  "errNeedDates": "Choisissez des dates",
+  "editAlert": "Modifier l'alerte",
+  "stepWhere": "1. Où ?",
+  "cityHint": "Ville ou commune",
+  "stepWhat": "2. Que cherchez-vous ?",
+  "searchHint": "Spécialité, nom du praticien, établissement...",
+  "searchHelperNoCity": "Choisissez d'abord une ville pour filtrer les praticiens",
+  "searchHelperCity": "Praticiens de {city} en premier",
+  "@searchHelperCity": {
+    "placeholders": {
+      "city": {
+        "type": "String"
+      }
+    }
+  },
+  "alertName": "Nom de l'alerte",
+  "specialities": "Spécialités",
+  "practitionersAndPlaces": "Praticiens et établissements",
+  "practitionersIn": "Praticiens à {city}",
+  "@practitionersIn": {
+    "placeholders": {
+      "city": {
+        "type": "String"
+      }
+    }
+  },
+  "elsewhere": "Ailleurs",
+  "specialityChipsHint": "L'alerte se déclenche pour n'importe quel praticien de ces spécialités dans la ville choisie.",
+  "noOnlineMotive": "Aucun motif réservable en ligne pour ce praticien.",
+  "motivesToWatch": "Motifs à surveiller",
+  "whenTitle": "Quand un créneau vous intéresse-t-il ?",
+  "whenBody": "Seuls les créneaux tombant dans cette fenêtre déclenchent une notification. C'est le réglage qui évite d'être réveillé pour un rendez-vous dans trois mois.",
+  "nextDays": "Prochains jours",
+  "exactDates": "Dates précises",
+  "pickPeriod": "Choisir une période",
+  "zoneCardTitle": "Limiter à une zone autour de moi",
+  "zoneCardBody": "Facultatif. Un rayon en km ou un temps de trajet depuis chez vous, votre position ou un point sur la carte. Sans zone, toute la ville est surveillée.",
+  "removeZone": "Retirer la zone",
+  "zoneFrom": "Depuis {label}",
+  "@zoneFrom": {
+    "placeholders": {
+      "label": {
+        "type": "String"
+      }
+    }
+  },
+  "zoneApprox": "Soit environ {dist} à vol d'oiseau (estimation)",
+  "@zoneApprox": {
+    "placeholders": {
+      "dist": {
+        "type": "String"
+      }
+    }
+  },
+  "zoneTowns": "Communes surveillées : {towns}",
+  "@zoneTowns": {
+    "placeholders": {
+      "towns": {
+        "type": "String"
+      }
+    }
+  },
+  "teleTitle": "Au cabinet ou en vidéo ?",
+  "teleBody": "Beaucoup de praticiens proposent les deux, et une téléconsultation se libère souvent bien plus vite qu'un rendez-vous sur place.",
+  "howToAlert": "Comment vous prévenir ?",
+  "howToAlertBody": "Propre à cette alerte : un pédiatre pour un enfant malade mérite qu'on vous sonne dessus, un contrôle de routine non.",
+  "callHint": "Bouton vert : ouvre directement le rendez-vous. Bouton rouge ou pas de réponse : une notification normale reste. La sonnerie et sa durée se choisissent dans les Réglages. Les heures de silence restent prioritaires : rien ne sonne la nuit.",
+  "filters": "Filtres",
+  "filtersBody": "Doctolib ne propose aucun de ces filtres. Ils sont appliqués dans l'app, sur les créneaux reçus, pour ne notifier que ce que vous pourriez réellement honorer.",
+  "hourRange": "Plage horaire : {from} — {to}",
+  "@hourRange": {
+    "placeholders": {
+      "from": {
+        "type": "String"
+      },
+      "to": {
+        "type": "String"
+      }
+    }
+  },
+  "acceptedDays": "Jours acceptés",
+  "acceptsNewPatients": "Accepte les nouveaux patients",
+  "acceptsNewPatientsBody": "Ignore les praticiens réservés à leur patientèle",
+  "appearance": "Apparence",
+  "language": "Langue",
+  "langSystem": "Langue du téléphone",
+  "theme": "Thème",
+  "themeSystem": "Automatique",
+  "themeLight": "Clair",
+  "themeDark": "Sombre",
+  "frequencyTitle": "À quelle fréquence chercher ?",
+  "searchEvery": "Je cherche {interval}",
+  "@searchEvery": {
+    "placeholders": {
+      "interval": {
+        "type": "String"
+      }
+    }
+  },
+  "frequencyBody": "Android ne lance jamais une vérification plus souvent que toutes les 15 minutes, et peut la retarder quand le téléphone dort. Plus souvent veut donc dire « dès que possible », pas « à la seconde près ».",
+  "freq15Advice": "Toutes les 15 minutes est le minimum autorisé par Android, pas forcément le meilleur réglage : cela consomme quatre fois plus de requêtes que 60 minutes pour un gain réel assez faible, puisque le système retarde de toute façon les tâches quand le téléphone dort. À garder pour une recherche vraiment urgente, sur quelques jours.",
+  "freqBalancedAdvice": "Bon compromis : assez réactif pour attraper une annulation, assez sobre pour tenir des semaines.",
+  "freqSlowAdvice": "Très économe. Adapté à une recherche de fond, où les créneaux ne partent pas en quelques minutes.",
+  "allowBackground": "Autoriser l'app en arrière-plan",
+  "allowBackgroundBody": "Sans cela, Android met l'app en veille et les vérifications s'arrêtent. C'est la cause numéro un des alertes qui ne sonnent jamais.",
+  "backgroundRestricted": "Toujours restreinte : ouvrez les paramètres Android",
+  "quietOnBody": "Entre {from} et {to}, l'app ne cherche rien et ne sonne pas, même une alerte « M'appeler » reste muette.",
+  "@quietOnBody": {
+    "placeholders": {
+      "from": {
+        "type": "String"
+      },
+      "to": {
+        "type": "String"
+      }
+    }
+  },
+  "quietOffBody": "L'app cherche et peut sonner à toute heure",
+  "fromLabel": "De",
+  "toLabel": "à",
+  "notifications": "Notifications",
+  "groupByAlert": "Regrouper par alerte",
+  "groupByAlertBody": "Une seule notification résumant tous les nouveaux créneaux, plutôt qu'une par créneau.",
+  "statusBadge": "Badge permanent de surveillance",
+  "statusBadgeBody": "Garde une ligne silencieuse dans le volet, à la manière d'un antivirus : état de chaque alerte, nombre de créneaux libres et date de la dernière recherche. Le meilleur moyen de vérifier d'un coup d'œil que l'app tourne encore.",
+  "needAndroid13": "Nécessaire sur Android 13 et plus",
+  "notifRefused": "Refusé : activez-les dans les paramètres Android",
+  "testAlert": "Tester une alerte",
+  "testAlertBody": "Entendez ce que chaque style donne avant de lui confier un vrai rendez-vous.",
+  "sampleSent": "Exemple envoyé : {label}",
+  "@sampleSent": {
+    "placeholders": {
+      "label": {
+        "type": "String"
+      }
+    }
+  },
+  "callModeTitle": "Mode « M'appeler »",
+  "callModeBody": "Le téléphone sonne jusqu'à ce que vous répondiez. Le bouton vert ouvre directement le rendez-vous sur Doctolib. Le bouton rouge, ou l'absence de réponse, arrête la sonnerie et laisse une notification normale : le créneau reste à un geste.",
+  "soundBundled": "Fournie avec l'app",
+  "soundSystem": "Celle réglée sur votre téléphone",
+  "listen": "Écouter",
+  "testCallSent": "Appel de test : {label} (12 s, essayez les deux boutons)",
+  "@testCallSent": {
+    "placeholders": {
+      "label": {
+        "type": "String"
+      }
+    }
+  },
+  "ringDuration": "Durée de la sonnerie",
+  "ringDurationBody": "Sans réponse après {s} s, l'appel s'arrête et une notification « appel manqué » le remplace.",
+  "@ringDurationBody": {
+    "placeholders": {
+      "s": {
+        "type": "int"
+      }
+    }
+  },
+  "blockTitle": "Ne pas se faire bloquer",
+  "blockBody": "Doctolib surveille les téléphones qui posent trop de questions et finit par les ignorer pendant un moment. Ces réglages gardent l'app largement sous ce seuil : peu de questions, bien espacées, et elle se tait d'elle-même si le site rechigne.",
+  "frugalTitle": "Mode économe (recommandé)",
+  "frugalBody": "Ne demande les horaires précis que pour les praticiens pas encore repérés : une recherche coûte alors 1 à 3 questions au lieu d'une vingtaine. C'est ce qui protège le plus du blocage.",
+  "safetyLimit": "Limite de sécurité : {label}",
+  "@safetyLimit": {
+    "placeholders": {
+      "label": {
+        "type": "String"
+      }
+    }
+  },
+  "safetyLimitBody": "Au maximum {max} questions à Doctolib par jour, toutes alertes confondues. Passé cette limite, l'app s'arrête jusqu'au lendemain plutôt que de risquer un blocage. Aujourd'hui : {today} utilisées.",
+  "@safetyLimitBody": {
+    "placeholders": {
+      "max": {
+        "type": "int"
+      },
+      "today": {
+        "type": "int"
+      }
+    }
+  },
+  "estimate": "Estimation",
+  "estimateBody": "Vous cherchez {interval}, {quiet}. Cela fait environ {perRun} question(s) à Doctolib à chaque fois, soit à peu près {perDay} par jour sur une limite de {max}.",
+  "@estimateBody": {
+    "placeholders": {
+      "interval": {
+        "type": "String"
+      },
+      "quiet": {
+        "type": "String"
+      },
+      "perRun": {
+        "type": "int"
+      },
+      "perDay": {
+        "type": "int"
+      },
+      "max": {
+        "type": "int"
+      }
+    }
+  },
+  "overLimit": "C'est au-dessus de votre limite : cherchez moins souvent, allongez les heures de silence, ou gardez moins d'alertes actives.",
+  "safetyPause": "Pause de sécurité",
+  "resumeIn": "Reprise dans {m} min.",
+  "@resumeIn": {
+    "placeholders": {
+      "m": {
+        "type": "int"
+      }
+    }
+  },
+  "about": "À propos",
+  "howItWorks": "Comment ça marche",
+  "howItWorksBody": "L'app interroge les mêmes points d'entrée JSON que le site doctolib.fr utilise lui-même quand vous le consultez. Rien ne quitte le téléphone : pas de compte, pas de serveur, pas de donnée de santé enregistrée. La réservation se fait sur Doctolib, dans votre navigateur.",
+  "personalUse": "Usage personnel",
+  "personalUseBody": "Ces points d'entrée ne sont pas documentés et peuvent changer sans préavis. Gardez un rythme raisonnable et un usage strictement personnel.",
+  "alertDeleted": "Alerte supprimée",
+  "nearestFirst": "Du plus proche au plus loin",
+  "ignoreAll": "Tout ignorer",
+  "resumeNow": "Reprendre maintenant",
+  "snoozeMenu": "Mettre en pause…",
+  "restoreAll": "Tout réactiver",
+  "duplicate": "Dupliquer",
+  "renotify": "Renotifier les créneaux connus",
+  "check": "Vérifier",
+  "earliest": "Plus tôt",
+  "nearest": "Plus proche",
+  "noSlotsWindow": "Aucun créneau {window}",
+  "@noSlotsWindow": {
+    "placeholders": {
+      "window": {
+        "type": "String"
+      }
+    }
+  },
+  "allIgnored": "Tout est ignoré pour l'instant",
+  "keepsChecking": "L'app continue de vérifier en arrière-plan et vous préviendra dès qu'un rendez-vous se libère.",
+  "ignoredHidden": "Les créneaux connus sont masqués. Tout nouveau créneau apparaîtra en rouge et vous sera notifié.",
+  "ignoredHeader": "Ignoré ({n})",
+  "@ignoredHeader": {
+    "placeholders": {
+      "n": {
+        "type": "int"
+      }
+    }
+  },
+  "slotsWindow": "Créneaux {window}",
+  "@slotsWindow": {
+    "placeholders": {
+      "window": {
+        "type": "String"
+      }
+    }
+  },
+  "lastCheck": "Dernière vérification {ago}",
+  "@lastCheck": {
+    "placeholders": {
+      "ago": {
+        "type": "String"
+      }
+    }
+  },
+  "repairInProgress": "Réparation automatique en cours ({n}/{max}) : l'alerte est reconstruite depuis Doctolib à chaque essai.",
+  "@repairInProgress": {
+    "placeholders": {
+      "n": {
+        "type": "int"
+      },
+      "max": {
+        "type": "int"
+      }
+    }
+  },
+  "repairedAgo": "Réparée automatiquement {ago}",
+  "@repairedAgo": {
+    "placeholders": {
+      "ago": {
+        "type": "String"
+      }
+    }
+  },
+  "alertActive": "Alerte active",
+  "zoneApproxParen": "(environ {dist} à vol d'oiseau)",
+  "@zoneApproxParen": {
+    "placeholders": {
+      "dist": {
+        "type": "String"
+      }
+    }
+  },
+  "zoneTownsCount": "{n, plural, =1{1 commune} other{{n} communes}}",
+  "@zoneTownsCount": {
+    "placeholders": {
+      "n": {
+        "type": "int"
+      }
+    }
+  },
+  "slotIgnored": "Créneau ignoré",
+  "dayIgnored": "Journée du {date} ignorée",
+  "@dayIgnored": {
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "doctorIgnored": "{name} ignoré",
+  "@doctorIgnored": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "ignoredAll": "{slots} ignorés, seuls les nouveaux vous seront signalés",
+  "@ignoredAll": {
+    "placeholders": {
+      "slots": {
+        "type": "String"
+      }
+    }
+  },
+  "allRestored": "Tout a été réactivé",
+  "snoozeFor": "Mettre en pause pendant",
+  "hoursCount": "{n, plural, =1{1 heure} other{{n} heures}}",
+  "@hoursCount": {
+    "placeholders": {
+      "n": {
+        "type": "int"
+      }
+    }
+  },
+  "daysCount": "{n, plural, =1{1 jour} other{{n} jours}}",
+  "@daysCount": {
+    "placeholders": {
+      "n": {
+        "type": "int"
+      }
+    }
+  },
+  "copyTitle": "{title} (copie)",
+  "@copyTitle": {
+    "placeholders": {
+      "title": {
+        "type": "String"
+      }
+    }
+  },
+  "renotified": "Les créneaux actuels seront notifiés à nouveau",
+  "deleteConfirm": "Supprimer cette alerte ?",
+  "pointOnMap": "Point choisi sur la carte",
+  "locationOff": "La localisation du téléphone est désactivée.",
+  "locationDeniedForever": "Localisation refusée. Autorisez-la dans les paramètres de l'app, ou choisissez un point sur la carte.",
+  "locationDenied": "Localisation refusée. Vous pouvez choisir un point sur la carte ou taper une adresse.",
+  "positionNotFound": "Position introuvable ({error})",
+  "@positionNotFound": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "needPoint": "Choisissez d'abord un point de départ.",
+  "findingTowns": "Recherche des communes de la zone...",
+  "preparingTown": "Préparation de {name} sur Doctolib ({i}/{n})",
+  "@preparingTown": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      },
+      "i": {
+        "type": "int"
+      },
+      "n": {
+        "type": "int"
+      }
+    }
+  },
+  "pointChosen": "Point choisi",
+  "zonePrepFailed": "Impossible de préparer la zone : {error}",
+  "@zonePrepFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "zoneTitle": "Zone de recherche",
+  "addressOptional": "Adresse (facultatif)",
+  "myPosition": "Ma position",
+  "tapMapHint": "Touchez la carte pour placer votre point de départ, ou utilisez « Ma position » ou une adresse.",
+  "circle": "Cercle",
+  "travelTime": "Temps de trajet",
+  "radiusLabel": "Rayon : {dist} à vol d'oiseau",
+  "@radiusLabel": {
+    "placeholders": {
+      "dist": {
+        "type": "String"
+      }
+    }
+  },
+  "atMost": "Au plus {minutes} min {phrase}",
+  "@atMost": {
+    "placeholders": {
+      "minutes": {
+        "type": "int"
+      },
+      "phrase": {
+        "type": "String"
+      }
+    }
+  },
+  "travelEstimate": "Estimation : environ {dist} à vol d'oiseau. Calculée avec des vitesses moyennes en ville (attente et marche comprises pour les transports) ; les horaires réels ne sont pas consultés.",
+  "@travelEstimate": {
+    "placeholders": {
+      "dist": {
+        "type": "String"
+      }
+    }
+  },
+  "validateZone": "Valider la zone",
+  "showWholeZone": "Voir toute la zone",
+  "centerOnPoint": "Recentrer sur le point",
+  "journal": "Journal",
+  "journalBody": "Ce que l'app a fait, vérification par vérification : de quoi s'assurer qu'elle tourne bien en arrière-plan, et voir à quelle heure les créneaux se libèrent.",
+  "journalEmpty": "Aucune activité pour le moment.",
+  "journalClear": "Effacer le journal",
+  "journalBackground": "arrière-plan",
+  "journalManual": "manuel",
+  "journalFound": "{title} : {slots}, dont {fresh} nouveau(x)",
+  "@journalFound": {
+    "placeholders": {
+      "title": {
+        "type": "String"
+      },
+      "slots": {
+        "type": "String"
+      },
+      "fresh": {
+        "type": "int"
+      }
+    }
+  },
+  "journalNothing": "{title} : rien dans la fenêtre",
+  "@journalNothing": {
+    "placeholders": {
+      "title": {
+        "type": "String"
+      }
+    }
+  },
+  "journalError": "{title} : {error}",
+  "@journalError": {
+    "placeholders": {
+      "title": {
+        "type": "String"
+      },
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "journalBusiestHour": "Heure où les nouveaux créneaux apparaissent le plus souvent : {hour}",
+  "@journalBusiestHour": {
+    "placeholders": {
+      "hour": {
+        "type": "String"
+      }
+    }
+  },
+  "journalCallAccepted": "Appel accepté",
+  "journalCallDeclined": "Appel refusé",
+  "journalCallMissed": "Appel manqué"
+}

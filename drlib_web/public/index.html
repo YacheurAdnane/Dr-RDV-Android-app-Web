@@ -1,0 +1,299 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Alertes RDV</title>
+<meta name="description" content="Surveillance des creneaux Doctolib, avec notification des qu'une place se libere.">
+<meta name="theme-color" content="#0f7c6c" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#101216" media="(prefers-color-scheme: dark)">
+<link rel="manifest" href="/manifest.webmanifest">
+<link rel="icon" href="/icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/icon-180.png">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Alertes RDV">
+<link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+
+<!-- ------------------------------------------------------------- login -- -->
+<div id="view-login" hidden>
+  <div class="shell" style="max-width:400px;padding-top:12vh">
+    <div style="text-align:center;margin-bottom:24px">
+      <img src="/icon.svg" width="56" height="56" alt="">
+      <h1 style="font-size:21px;margin:12px 0 4px">Alertes RDV</h1>
+      <p class="muted" style="margin:0">Surveillance des creneaux Doctolib</p>
+    </div>
+    <div class="card">
+      <div id="login-error" class="banner err" hidden></div>
+      <form id="login-form">
+        <label for="login-user">Identifiant</label>
+        <input id="login-user" type="text" autocomplete="username" autocapitalize="none"
+               spellcheck="false" required>
+        <label for="login-pass">Mot de passe</label>
+        <input id="login-pass" type="password" autocomplete="current-password" required>
+        <button type="submit" style="width:100%;margin-top:18px">Se connecter</button>
+      </form>
+      <p class="muted" style="margin:16px 0 0;text-align:center;font-size:12.5px">
+        Les comptes sont crees par l'administrateur.
+      </p>
+    </div>
+  </div>
+</div>
+
+<!-- -------------------------------------------------------------- list -- -->
+<div id="view-list" hidden>
+  <div class="shell">
+    <div class="topbar">
+      <h1>Mes alertes</h1>
+      <span class="who" id="who"></span>
+      <button class="ghost small" id="btn-settings" aria-label="Reglages">&#9881;</button>
+    </div>
+
+    <div id="guard-banner" class="banner warn" hidden></div>
+    <div id="push-banner" class="banner warn" hidden></div>
+
+    <div id="alert-list"></div>
+
+    <div id="list-empty" class="empty" hidden>
+      <h2>Aucune alerte</h2>
+      <p>Creez-en une et vous serez prevenu des qu'un creneau se libere.</p>
+    </div>
+  </div>
+  <button class="fab" id="btn-new">+ Nouvelle alerte</button>
+</div>
+
+<!-- ------------------------------------------------------------ detail -- -->
+<div id="view-detail" hidden>
+  <div class="shell">
+    <div class="topbar">
+      <button class="ghost small" id="detail-back">&#8592;</button>
+      <h1 id="detail-title"></h1>
+    </div>
+    <div id="detail-body"></div>
+  </div>
+</div>
+
+<!-- -------------------------------------------------------------- edit -- -->
+<div id="view-edit" hidden>
+  <div class="shell">
+    <div class="topbar">
+      <button class="ghost small" id="edit-cancel">&#8592;</button>
+      <h1 id="edit-heading">Nouvelle alerte</h1>
+    </div>
+    <div id="edit-error" class="banner err" hidden></div>
+
+    <div class="card">
+      <h2>Que surveiller ?</h2>
+      <p class="sub">Une specialite dans une ville, ou un praticien precis.</p>
+      <div class="row tight" style="margin-bottom:4px">
+        <button class="ghost small" data-kind="speciality" id="kind-spec">Une specialite</button>
+        <button class="ghost small" data-kind="doctor" id="kind-doc">Un praticien</button>
+      </div>
+
+      <!-- speciality mode -->
+      <div id="mode-spec">
+        <label for="q-spec">Specialite</label>
+        <input id="q-spec" type="search" placeholder="Dermatologue, pediatre, IRM..."
+               autocomplete="off" spellcheck="false">
+        <div id="sug-spec" class="suggest" hidden></div>
+        <div class="chips" id="chips-spec"></div>
+
+        <label for="q-city">Ville</label>
+        <input id="q-city" type="search" placeholder="Lyon, Paris 11e, Saint-Etienne..."
+               autocomplete="off" spellcheck="false">
+        <div id="sug-city" class="suggest" hidden></div>
+        <div class="chips" id="chips-city"></div>
+      </div>
+
+      <!-- doctor mode -->
+      <div id="mode-doc" hidden>
+        <label for="q-doc">Nom du praticien ou de l'etablissement</label>
+        <input id="q-doc" type="search" placeholder="Dr Germont, Clinique du Parc..."
+               autocomplete="off" spellcheck="false">
+        <div id="sug-doc" class="suggest" hidden></div>
+        <div class="chips" id="chips-doc"></div>
+        <div id="motive-box" hidden>
+          <label>Motifs de consultation</label>
+          <p class="muted" style="margin:-2px 0 8px">
+            Sans selection, le motif propose par defaut est surveille.
+          </p>
+          <div id="motive-list"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>Quand ?</h2>
+      <p class="sub">Plus la fenetre est courte, moins la surveillance coute de requetes.</p>
+      <div class="row tight" style="margin-bottom:10px">
+        <button class="ghost small" id="win-days">Prochains jours</button>
+        <button class="ghost small" id="win-range">Entre deux dates</button>
+      </div>
+
+      <div id="win-days-box">
+        <label for="horizon">Fenetre : <span id="horizon-label">3 jours</span></label>
+        <input id="horizon" type="range" min="1" max="30" value="3" style="width:100%">
+      </div>
+
+      <div id="win-range-box" hidden class="grid2">
+        <div><label for="date-from">Du</label><input id="date-from" type="date"></div>
+        <div><label for="date-to">Au</label><input id="date-to" type="date"></div>
+      </div>
+
+      <label>Jours acceptes</label>
+      <div class="daypick" id="daypick"></div>
+
+      <div class="grid2">
+        <div>
+          <label for="hour-from">A partir de</label>
+          <select id="hour-from"></select>
+        </div>
+        <div>
+          <label for="hour-to">Jusqu'a</label>
+          <select id="hour-to"></select>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>Filtres</h2>
+      <label class="toggle">
+        <input type="checkbox" id="f-new">
+        <span><span class="tt">Nouveaux patients uniquement</span>
+        <span class="td">Ecarte les praticiens qui ne prennent plus de nouveaux patients.</span></span>
+      </label>
+      <label for="f-tele">Lieu du rendez-vous</label>
+      <select id="f-tele">
+        <option value="any">Peu importe</option>
+        <option value="inPerson">Au cabinet uniquement</option>
+        <option value="online">Teleconsultation uniquement</option>
+      </select>
+    </div>
+
+    <div class="card">
+      <h2>Notifications</h2>
+      <p class="sub">Comment voulez-vous etre prevenu quand un creneau se libere ?</p>
+
+      <label class="toggle">
+        <input type="checkbox" id="f-push" checked>
+        <span><span class="tt">Notification du navigateur</span>
+        <span class="td">Arrive meme si l'onglet et le navigateur sont fermes.</span></span>
+      </label>
+      <label class="toggle">
+        <input type="checkbox" id="f-email">
+        <span><span class="tt">E-mail</span>
+        <span class="td" id="f-email-hint">En plus de la notification.</span></span>
+      </label>
+
+      <div id="f-silent-warn" class="banner warn" style="margin-top:10px" hidden>
+        Sans aucun moyen de notification, l'alerte n'a rien a vous annoncer :
+        elle sera enregistree mais mise en pause, et ne consommera aucune requete.
+      </div>
+
+      <label for="f-style">Style d'alerte</label>
+      <select id="f-style">
+        <option value="discreet">Discrete — sans son</option>
+        <option value="normal" selected>Normale — son habituel</option>
+        <option value="call">Insistante — reste affichee, vibre</option>
+      </select>
+      <p class="muted" style="margin-top:6px">
+        Un navigateur ne peut pas sonner comme un appel. « Insistante » affiche une
+        notification qui ne disparait pas toute seule et vibre plus longtemps.
+      </p>
+
+      <label for="f-interval">Verifier toutes les <span id="interval-label">15 min</span></label>
+      <input id="f-interval" type="range" min="5" max="120" step="5" value="15" style="width:100%">
+
+      <label class="toggle" style="margin-top:8px">
+        <input type="checkbox" id="f-quiet" checked>
+        <span><span class="tt">Heures silencieuses</span>
+        <span class="td">Les creneaux trouves la nuit sont enregistres mais pas notifies.</span></span>
+      </label>
+      <div class="grid2" id="quiet-box">
+        <div><label for="quiet-from">De</label><select id="quiet-from"></select></div>
+        <div><label for="quiet-to">A</label><select id="quiet-to"></select></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <label for="edit-title">Nom de l'alerte</label>
+      <input id="edit-title" type="text" maxlength="80" placeholder="Dermato Lyon — urgent">
+      <div class="row end" style="margin-top:18px">
+        <button class="ghost" id="edit-cancel-2">Annuler</button>
+        <button id="edit-save">Enregistrer</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ---------------------------------------------------------- settings -- -->
+<div id="view-settings" hidden>
+  <div class="shell">
+    <div class="topbar">
+      <button class="ghost small" id="settings-back">&#8592;</button>
+      <h1>Reglages</h1>
+    </div>
+
+    <div class="card">
+      <h2>Notifications du navigateur</h2>
+      <p class="sub" id="push-state">Verification...</p>
+      <div class="row">
+        <button id="btn-enable-push">Activer sur cet appareil</button>
+        <button class="ghost" id="btn-test-push">Envoyer un test</button>
+        <button class="ghost" id="btn-push-diag">Diagnostic</button>
+      </div>
+      <div id="push-diag" style="margin-top:14px" hidden></div>
+      <div id="ios-hint" class="banner warn" style="margin-top:14px" hidden>
+        <strong>Sur iPhone / iPad :</strong> les notifications ne fonctionnent que si
+        le site est ajoute a l'ecran d'accueil. Ouvrez le menu Partager de Safari,
+        puis « Sur l'ecran d'accueil », et rouvrez l'application depuis cette icone.
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>Alertes par e-mail</h2>
+      <p class="sub" id="email-state"></p>
+      <label class="toggle">
+        <input type="checkbox" id="email-toggle">
+        <span><span class="tt">Autoriser les e-mails sur ce compte</span>
+        <span class="td">Chaque alerte choisit ensuite si elle utilise l'e-mail.</span></span>
+      </label>
+      <div class="row" style="margin-top:12px">
+        <button class="ghost" id="btn-test-email">Envoyer un e-mail de test</button>
+      </div>
+      <div id="email-result" style="margin-top:12px" hidden></div>
+    </div>
+
+    <div class="card">
+      <h2>Mot de passe</h2>
+      <div id="pw-msg" class="banner" hidden></div>
+      <form id="pw-form">
+        <label for="pw-cur">Mot de passe actuel</label>
+        <input id="pw-cur" type="password" autocomplete="current-password" required>
+        <label for="pw-new">Nouveau mot de passe (10 caracteres minimum)</label>
+        <input id="pw-new" type="password" autocomplete="new-password" minlength="10" required>
+        <button type="submit" style="margin-top:16px">Changer le mot de passe</button>
+      </form>
+    </div>
+
+    <div class="card">
+      <h2>Journal</h2>
+      <p class="sub">Les dernieres verifications, pour voir que la surveillance tourne.</p>
+      <div id="journal"></div>
+    </div>
+
+    <div class="card">
+      <div class="row">
+        <a href="/admin" id="admin-link" hidden><button class="ghost">Administration</button></a>
+        <div class="spacer"></div>
+        <button class="danger" id="btn-logout">Se deconnecter</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="/app.js" type="module"></script>
+</body>
+</html>

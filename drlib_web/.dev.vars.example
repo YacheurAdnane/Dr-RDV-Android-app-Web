@@ -1,0 +1,15 @@
+# Copy to .dev.vars for `npm run dev`. Never commit the copy.
+#
+# The two VAPID values come from `npm run vapid`. Use the same pair locally and
+# in production, or a browser subscribed against one will be rejected by the
+# other.
+
+VAPID_PUBLIC_KEY=
+VAPID_PRIVATE_KEY=
+
+# One-time token for POST /api/auth/bootstrap, which creates the first admin.
+# Delete it once that account exists.
+ADMIN_BOOTSTRAP=change-me
+
+# Optional. Without it the email path is skipped and push still works.
+RESEND_API_KEY=

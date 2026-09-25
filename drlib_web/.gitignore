@@ -1,0 +1,11 @@
+node_modules/
+.wrangler/
+.dryrun/
+dist/
+
+# Local secrets for `wrangler dev`. Never commit: this holds the VAPID private
+# key and the bootstrap token.
+.dev.vars
+
+*.log
+.DS_Store

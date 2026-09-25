@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Administration — Alertes RDV</title>
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#0f7c6c" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#101216" media="(prefers-color-scheme: dark)">
+<link rel="icon" href="/icon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/styles.css">
+<style>.shell { max-width: 880px; }</style>
+</head>
+<body>
+
+<div class="shell">
+  <div class="topbar">
+    <h1>Administration</h1>
+    <span class="who" id="who"></span>
+    <a href="/"><button class="ghost small">Mes alertes</button></a>
+  </div>
+
+  <div id="denied" hidden>
+    <div class="card">
+      <h2>Acces refuse</h2>
+      <p class="sub" id="denied-msg">Cette page est reservee a l'administrateur.</p>
+      <a href="/"><button>Retour</button></a>
+    </div>
+  </div>
+
+  <div id="panel" hidden>
+
+    <!-- ------------------------------------------------------- overview -- -->
+    <div class="card">
+      <h2>Etat du service</h2>
+      <p class="sub" id="status-sub">Chargement...</p>
+      <div class="chips" id="status-chips"></div>
+      <div id="guard-warn" class="banner warn" style="margin-top:12px" hidden></div>
+      <div class="row" style="margin-top:14px">
+        <button class="ghost small" id="btn-refresh">Rafraichir</button>
+        <button class="ghost small" id="btn-diagnose">Diagnostic Doctolib</button>
+        <button class="ghost small" id="btn-clear-pause" hidden>Lever la pause</button>
+      </div>
+      <div id="diag" style="margin-top:14px" hidden></div>
+    </div>
+
+    <!-- ---------------------------------------------------------- users -- -->
+    <div class="card">
+      <div class="row" style="margin-bottom:10px">
+        <h2 style="flex:1;margin:0">Utilisateurs</h2>
+        <button class="small" id="btn-add-user">+ Ajouter</button>
+      </div>
+      <div class="scroll-x">
+        <table id="users-table">
+          <thead>
+            <tr>
+              <th>Identifiant</th><th>E-mail</th><th>Alertes</th>
+              <th>Derniere connexion</th><th></th>
+            </tr>
+          </thead>
+          <tbody id="users-body"></tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- --------------------------------------------------------- alerts -- -->
+    <div class="card">
+      <h2>Toutes les alertes</h2>
+      <p class="sub">Chaque alerte active consomme des requetes Doctolib sur le budget partage.</p>
+      <div class="scroll-x">
+        <table>
+          <thead>
+            <tr><th>Alerte</th><th>Proprietaire</th><th>Rythme</th><th>Etat</th><th></th></tr>
+          </thead>
+          <tbody id="alerts-body"></tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- -------------------------------------------------------- journal -- -->
+    <div class="card">
+      <h2>Activite recente</h2>
+      <div id="recent"></div>
+    </div>
+  </div>
+</div>
+
+<!-- --------------------------------------------------------- dialogs -- -->
+<dialog id="dlg-user">
+  <h2 style="margin:0 0 4px;font-size:17px" id="dlg-user-title">Nouvel utilisateur</h2>
+  <p class="sub" id="dlg-user-sub">Le mot de passe est genere et affiche une seule fois.</p>
+  <div id="dlg-user-error" class="banner err" hidden></div>
+  <form id="dlg-user-form" method="dialog">
+    <div id="field-username">
+      <label for="u-name">Identifiant</label>
+      <input id="u-name" type="text" autocapitalize="none" spellcheck="false"
+             pattern="[a-zA-Z0-9._\-]{3,64}" required>
+    </div>
+    <label for="u-email">Adresse e-mail (pour les alertes par mail)</label>
+    <input id="u-email" type="email" placeholder="facultatif">
+    <label class="toggle" style="margin-top:12px">
+      <input type="checkbox" id="u-mail-alerts">
+      <span><span class="tt">Activer les alertes par e-mail</span>
+      <span class="td">L'utilisateur pourra aussi les couper lui-meme.</span></span>
+    </label>
+    <label class="toggle">
+      <input type="checkbox" id="u-admin">
+      <span><span class="tt">Administrateur</span>
+      <span class="td">Acces a cette page, aux comptes et a toutes les alertes.</span></span>
+    </label>
+    <div class="row end" style="margin-top:18px">
+      <button type="button" class="ghost" id="dlg-user-cancel">Annuler</button>
+      <button type="button" id="dlg-user-save">Creer</button>
+    </div>
+  </form>
+</dialog>
+
+<dialog id="dlg-pass">
+  <h2 style="margin:0 0 4px;font-size:17px">Mot de passe</h2>
+  <p class="sub">Notez-le maintenant : il ne sera plus affiche.</p>
+  <div class="card tight" style="margin:0 0 14px;background:var(--surface-2)">
+    <div class="muted" style="font-size:12px">Identifiant</div>
+    <div class="mono" id="pass-user" style="font-size:15px;margin-bottom:10px"></div>
+    <div class="muted" style="font-size:12px">Mot de passe</div>
+    <div class="mono" id="pass-value" style="font-size:18px;letter-spacing:.02em"></div>
+  </div>
+  <div class="row end">
+    <button class="ghost" id="pass-copy">Copier</button>
+    <button id="pass-close">J'ai note</button>
+  </div>
+</dialog>
+
+<script src="/admin.js" type="module"></script>
+</body>
+</html>

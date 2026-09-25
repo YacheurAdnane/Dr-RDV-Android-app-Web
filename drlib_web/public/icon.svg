@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="Alertes RDV">
+  <rect width="512" height="512" rx="112" fill="#0f7c6c"/>
+  <circle cx="256" cy="268" r="132" fill="none" stroke="#ffffff" stroke-width="30"/>
+  <path d="M256 190v82h62" fill="none" stroke="#ffffff" stroke-width="30"
+        stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M150 104a132 132 0 0 1 60-38" fill="none" stroke="#9ff0de" stroke-width="26"
+        stroke-linecap="round"/>
+  <path d="M362 104a132 132 0 0 0-60-38" fill="none" stroke="#9ff0de" stroke-width="26"
+        stroke-linecap="round"/>
+</svg>
